@@ -1,9 +1,4 @@
-# Big Data Algorithms
-These algorithms will serve to aid in processing large amounts of data.
-
-# Programs
-
-  PCA
+# PCA
 
 ```bash
 python PCA.py
