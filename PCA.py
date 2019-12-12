@@ -8,11 +8,11 @@ from matplotlib import pyplot
 
 def data(m,n):
 
-    X = abs(rand(m, n, density=0.1,dtype=float))
+    X = abs(rand(m, n, density=0.1))
 
     k = min(X.shape) - 1
 
-    return X ,k
+    return X , k
 
 # Preform truncated SVD
 
@@ -47,8 +47,6 @@ def main():
     print('For now there is only 3 dimensional capability, in the future there will be added functionality for higher dimensions.')
 
     X,k = data(m,3)
-
-    print(X,"\n This is your sparse random matrix")
 
     singular_values = svd(X,k)
 
