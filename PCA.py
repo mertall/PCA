@@ -8,11 +8,11 @@ from matplotlib import pyplot
 
 def data(m,n):
 
-    X = abs(rand(m, n, density=0.1))
+    X = rand(m, n, density=0.1)
 
     k = min(X.shape) - 1
 
-    return X , k
+    return X, k
 
 # Preform truncated SVD
 
@@ -32,9 +32,13 @@ def graph(X,singular_values):
 
     ax = pyplot.axes(projection='3d')
 
-    ax = pyplot.axes(projection='3d')
+    ax.scatter(singular_values[:,0],singular_values[:,1])
 
-    ax.plot3D(singular_values[:,0],singular_values[:,1], 'green')
+    fig2 = pyplot.figure()
+
+    ax1 =pyplot.axes(projection='3d')
+
+    ax1.plot3D(singular_values[:,0],singular_values[:,1])
 
     print(singular_values)
 
@@ -43,7 +47,6 @@ def graph(X,singular_values):
 def main():
 
     m = int(input('Choose the number of rows in your sparse random matrix:\n'))
-
     print('For now there is only 3 dimensional capability, in the future there will be added functionality for higher dimensions.')
 
     X,k = data(m,3)
